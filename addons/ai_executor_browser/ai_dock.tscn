@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://addons/ai_executor_browser/ai_dock.gd" id="1_ai_dock"]
+[ext_resource type="Script" path="res://addons/ai_executor_browser/executor_panel.gd" id="2_executor"]
+[ext_resource type="Script" path="res://addons/ai_executor_browser/browser_panel.gd" id="3_browser"]
+
+[node name="AIDock" type="VBoxContainer"]
+custom_minimum_size = Vector2(460, 620)
+script = ExtResource("1_ai_dock")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Executor" type="VBoxContainer" parent="TabContainer"]
+layout_mode = 2
+script = ExtResource("2_executor")
+
+[node name="Browser" type="VBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("3_browser")
